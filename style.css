@@ -1,6 +1,7 @@
 :root {
     --Soft-blue: hsl(215, 51%, 70%);
     --Cyan: hsl(178, 100%, 50%);
+    --Cyan-trans: hsl(178, 100%, 50%, 0.5);
     --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
     --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
     --Very-dark-blue-line: hsl(215, 32%, 27%);
@@ -36,14 +37,44 @@ body {
     width: 18rem;
 }
 
-.card__img {
+.imgOverlay {
     width: 100%;
+    min-height: 18rem;
+    background-image: url(images/image-equilibrium.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1em;
+    position: relative;
+}
+
+.imgOverlay:hover .overlay {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    background-image: url(images/icon-view.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--Cyan-trans);
+    overflow: hidden;
     border-radius: 1em;
 }
 
 .card__content > h2 {
     color: var(--White);
     font-weight: 400;
+}
+
+.card__content> h2:hover {
+    color: var(--Cyan);
+    cursor: pointer;
 }
 
 .card__content > p {
@@ -96,4 +127,8 @@ body {
     color: var(--White);
 }
 
+.created-by__contrasted:hover {
+    color: var(--Cyan);
+    cursor: pointer;
+}
 
